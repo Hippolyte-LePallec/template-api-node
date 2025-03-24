@@ -24,7 +24,7 @@
     "url": "git+https://github.com/vfourny/nodejs-pokedex-api.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hippolyte Le Pallec",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vfourny/nodejs-pokedex-api/issues"
