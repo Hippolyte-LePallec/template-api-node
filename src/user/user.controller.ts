@@ -14,7 +14,7 @@ export const fetchUser = async (req: Request, res: Response) => {
     res.status(200).send(user)
   } catch {
     res.status(500).json({
-      error: 'Failed to fetch users',
+      error: 'Une erreur est survenue',
     })
   }
 }
@@ -61,7 +61,7 @@ export const login = async (req: Request, res: Response) => {
 
     if (!user) {
       res.status(401).json({
-        error: 'Email not found',
+        error: 'Email incorrect',
       })
       return
     }
@@ -69,7 +69,7 @@ export const login = async (req: Request, res: Response) => {
     const isPasswordValid = await bcrypt.compare(password, user.password)
     if (!isPasswordValid) {
       res.status(401).json({
-        error: 'Invalid password',
+        error: 'Mot de passe incorrect',
       })
       return
     }
@@ -87,15 +87,15 @@ export const login = async (req: Request, res: Response) => {
 
     res.status(200).json({
       token,
-      user: {
-        id: user.id,
-        email: user.email,
-      },
-      message: 'Login successful',
+      // user: {
+      //   id: user.id,
+      //   email: user.email,
+      // },
+      message: 'Connexion réussie',
     })
   } catch {
     res.status(500).json({
-      error: 'Failed to login',
+      error: 'Une erreur est survenue',
     })
   }
 }
